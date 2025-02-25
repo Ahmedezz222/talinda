@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>talinda Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function selectCategory(category) {
+            document.querySelectorAll('.items').forEach(item => item.style.display = 'none');
+            document.getElementById(category).style.display = 'grid';
+            document.querySelectorAll('.category-item').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.querySelector(`[onclick="selectCategory('${category}')"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+<header>
+    <nav aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="talinda Home">
+                <img src="talinda.png" alt="talinda Logo">
+            </a>
+            <h1>talinda</h1>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="category-bar">
+        <div class="category-item" onclick="selectCategory('main_courses')">
+            <img src="images/main_courses.jpg" alt="Main Courses">
+            Main Courses
+        </div>
+        <div class="category-item" onclick="selectCategory('desserts')">
+            <img src="images/desserts.jpg" alt="Desserts">
+            Desserts
+        </div>
+        <div class="category-item" onclick="selectCategory('drinks')">
+            <img src="images/drinks.jpg" alt="Drinks">
+            Drinks
+        </div>
+        <div class="category-item" onclick="selectCategory('appetizers')">
+            <img src="images/appetizers.jpg" alt="Appetizers">
+            Appetizers
+        </div>
+    </div>
+    
+    <div id="main_courses" class="items">
+        <div class="menu-item">
+            <img src="images/steak.jpg" alt="Steak">
+            <div>
+                <h3>Grilled Steak</h3>
+                <p>Juicy grilled steak served with mashed potatoes.</p>
+                <span class="price">$20.99</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="images/pasta.jpg" alt="Pasta">
+            <div>
+                <h3>Creamy Alfredo Pasta</h3>
+                <p>Delicious pasta with creamy alfredo sauce.</p>
+                <span class="price">$15.99</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="desserts" class="items">
+        <div class="menu-item">
+            <img src="images/cake.jpg" alt="Chocolate Cake">
+            <div>
+                <h3>Chocolate Cake</h3>
+                <p>Rich and moist chocolate cake with creamy frosting.</p>
+                <span class="price">$7.99</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="images/icecream.jpg" alt="Ice Cream">
+            <div>
+                <h3>Vanilla Ice Cream</h3>
+                <p>Creamy vanilla ice cream topped with chocolate syrup.</p>
+                <span class="price">$5.99</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="drinks" class="items">
+        <div class="menu-item">
+            <img src="images/coffee.jpg" alt="Coffee">
+            <div>
+                <h3>Fresh Coffee</h3>
+                <p>Hot brewed coffee made from premium beans.</p>
+                <span class="price">$3.99</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="images/smoothie.jpg" alt="Fruit Smoothie">
+            <div>
+                <h3>Fruit Smoothie</h3>
+                <p>Refreshing blend of tropical fruits and yogurt.</p>
+                <span class="price">$6.99</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="appetizers" class="items">
+        <div class="menu-item">
+            <img src="images/bruschetta.jpg" alt="Bruschetta">
+            <div>
+                <h3>Bruschetta</h3>
+                <p>Grilled bread topped with tomatoes, basil, and olive oil.</p>
+                <span class="price">$8.99</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="images/soup.jpg" alt="Soup">
+            <div>
+                <h3>Tomato Soup</h3>
+                <p>Rich and creamy tomato soup served with croutons.</p>
+                <span class="price">$6.49</span>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+            <a href="" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© 2025 talinda. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
