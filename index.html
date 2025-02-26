@@ -1,136 +1,542 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>talinda Menu</title>
+    <title>Talinda Menu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script>
         function selectCategory(category) {
             document.querySelectorAll('.items').forEach(item => item.style.display = 'none');
-            document.getElementById(category).style.display = 'grid';
+            const selectedCategory = document.getElementById(category);
+            if (selectedCategory) {
+                selectedCategory.style.display = 'grid';
+            }
             document.querySelectorAll('.category-item').forEach(btn => btn.classList.remove('active'));
             const activeBtn = document.querySelector(`[onclick="selectCategory('${category}')"]`);
             if (activeBtn) activeBtn.classList.add('active');
         }
+
+        window.onload = function() {
+            selectCategory('main_courses'); 
+        };
     </script>
 </head>
 <body>
 <header>
     <nav aria-label="Main navigation">
         <div class="container">
-            <a href="index.html" class="logo" aria-label="talinda Home">
-                <img src="talinda.png" alt="talinda Logo">
+            <a href="index.html" class="logo" aria-label="Talinda Home">
+                <img src="talinda.png" alt="Talinda Logo">
             </a>
-            <h1>talinda</h1>
+            <h1>Talinda</h1>
         </div>
     </nav>
 </header>
+
 <main>
     <div class="category-bar">
-        <div class="category-item" onclick="selectCategory('main_courses')">
+        <div class="category-item active" onclick="selectCategory('main_courses')">
             <img src="images/main_courses.jpg" alt="Main Courses">
-            Main Courses
+            الاطباق الرئيسية
         </div>
-        <div class="category-item" onclick="selectCategory('desserts')">
-            <img src="images/desserts.jpg" alt="Desserts">
-            Desserts
+        <div class="category-item" onclick="selectCategory('tajines')">
+            <img src="images/tajines.jpg" alt="Tajines">
+            الطواجن
         </div>
-        <div class="category-item" onclick="selectCategory('drinks')">
-            <img src="images/drinks.jpg" alt="Drinks">
-            Drinks
+        <div class="category-item" onclick="selectCategory('trays')">
+            <img src="images/trays.jpg" alt="Trays">
+            الصواني
+        </div>
+        <div class="category-item" onclick="selectCategory('kids_meals')">
+            <img src="images/kids_meals.jpg" alt="Kids Meals">
+            وجبات الاطفال
         </div>
         <div class="category-item" onclick="selectCategory('appetizers')">
             <img src="images/appetizers.jpg" alt="Appetizers">
-            Appetizers
+            مقبلات
+        </div>
+        <div class="category-item" onclick="selectCategory('sides_food')">
+            <img src="images/sides_food.jpg" alt="Sides_food">
+            الاضافات
+        </div>
+        <div class="category-item" onclick="selectCategory('HOT_DRINKS')">
+            <img src="images/HOT_DRINKS.jpg" alt="HOT DRINKS">
+            HOT DRINKS
+        </div>
+        <div class="category-item" onclick="selectCategory('SOFT DRINKS')">
+            <img src="images/SOFT DRINKS.jpg" alt="SOFT DRINKS">
+            SOFT DRINKS
+        </div>
+       <div class="category-item" onclick="selectCategory('COFFEE')">
+            <img src="images/COFFEE.jpg" alt="COFFEE">
+            COFFEE
+        </div>
+        <div class="category-item" onclick="selectCategory('FRESH JUICE')">
+            <img src="images/FRESH JUICE.jpg" alt="FRESH JUICE">
+            FRESH JUICE
+        </div>
+        <div class="category-item" onclick="selectCategory('COCKTIL')">
+            <img src="images/COCKTIL.jpg" alt="COCKTIL">
+            COCKTIL
+        </div>
+        <div class="category-item" onclick="selectCategory('SMOOTHIE')">
+            <img src="images/SMOOTHIE.jpg" alt="SMOOTHIE">
+            SMOOTHIE
+        </div>
+        <div class="category-item" onclick="selectCategory('MILK CHECK')">
+            <img src="images/MILK CHECK.jpg" alt="MILK CHECK">
+            MILK CHECK
+        </div>
+        <div class="category-item" onclick="selectCategory('FRAPPE')">
+            <img src="images/FRAPPE.jpg" alt="FRAPPE">
+            FRAPPE
+        </div>
+        <div class="category-item" onclick="selectCategory('SWEET')">
+            <img src="images/SWEET.jpg" alt="SWEET">
+            SWEET
+        </div>
+        <div class="category-item" onclick="selectCategory('adds')">
+            <img src="images/adds.jpg" alt="adds">
+            االضافات
+        </div>
+        <div class="category-item" onclick="selectCategory('SHISHA')">
+            <img src="images/SHISHA.jpg" alt="SHISHA">
+            SHISHA
         </div>
     </div>
     
-    <div id="main_courses" class="items">
+    <div id="main_courses" class="items" style="display: grid;">
         <div class="menu-item">
-            <img src="images/steak.jpg" alt="Steak">
+            <img src="images/steak.jpg" alt="ميكس جريل">
             <div>
-                <h3>Grilled Steak</h3>
-                <p>Juicy grilled steak served with mashed potatoes.</p>
-                <span class="price">$20.99</span>
+                <h3>ميكس جريل</h3>
+                <p>كباب 2 - كفتة 2 - 2 شيش طاووق مشوي
+                    ارز - سلطة - خضار سوتيه - عيش
+                    مشروب رمضاني - مياة صغيرة</p>
+                <span class="price">350 LE</span>
             </div>
         </div>
         <div class="menu-item">
-            <img src="images/pasta.jpg" alt="Pasta">
+            <img src="images/pasta.jpg" alt="فراخ مشوي">
             <div>
-                <h3>Creamy Alfredo Pasta</h3>
-                <p>Delicious pasta with creamy alfredo sauce.</p>
-                <span class="price">$15.99</span>
-            </div>
-        </div>
-    </div>
-    
-    <div id="desserts" class="items">
-        <div class="menu-item">
-            <img src="images/cake.jpg" alt="Chocolate Cake">
-            <div>
-                <h3>Chocolate Cake</h3>
-                <p>Rich and moist chocolate cake with creamy frosting.</p>
-                <span class="price">$7.99</span>
+                <h3>فراخ مشوي</h3>
+                <p>ص فرخة مشوية - ارز - خضار سوتية - سلطة
+                    عيش - مشروب رمضاني - مياة صغيرة</p>
+                <span class="price">270 LE</span>
             </div>
         </div>
         <div class="menu-item">
-            <img src="images/icecream.jpg" alt="Ice Cream">
+            <img src="images/steak.jpg" alt="فراخ بانية">
             <div>
-                <h3>Vanilla Ice Cream</h3>
-                <p>Creamy vanilla ice cream topped with chocolate syrup.</p>
-                <span class="price">$5.99</span>
-            </div>
-        </div>
-    </div>
-    
-    <div id="drinks" class="items">
-        <div class="menu-item">
-            <img src="images/coffee.jpg" alt="Coffee">
-            <div>
-                <h3>Fresh Coffee</h3>
-                <p>Hot brewed coffee made from premium beans.</p>
-                <span class="price">$3.99</span>
+                <h3>فراخ بانية</h3>
+                <p>قطعة بانية 2 - مكرونة ريد صوص - سلطة
+                    عيش - مشروب رمضاني - مياة صغيرة</p>
+                <span class="price">270 LE</span>
             </div>
         </div>
         <div class="menu-item">
-            <img src="images/smoothie.jpg" alt="Fruit Smoothie">
+            <img src="images/steak.jpg" alt="أسكالوب بانية">
             <div>
-                <h3>Fruit Smoothie</h3>
-                <p>Refreshing blend of tropical fruits and yogurt.</p>
-                <span class="price">$6.99</span>
+                <h3>أسكالوب بانية</h3>
+                <p>2 قطعة اسكالوب - مكرونة ريد صوص - سلطة
+                    عيش - مشروب رمضاني - مياة صغير</p>
+                <span class="price">290 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="images/steak.jpg" alt="ميني ميكس">
+            <div>
+                <h3>ميني ميكس</h3>
+                <p>3 كفتة - 2 شيش طاووق مشوي ارز
+                    سلطة - خضار سوتيه - عيش مشروب
+                    رمضاني - مياة صغيرة</p>
+                <span class="price">320LE</span>
             </div>
         </div>
     </div>
     
-    <div id="appetizers" class="items">
+    <div id="tajines" class="items" style="display: none;">
         <div class="menu-item">
-            <img src="images/bruschetta.jpg" alt="Bruschetta">
+            <img src="tajines.jpg" alt="بامية">
             <div>
-                <h3>Bruschetta</h3>
-                <p>Grilled bread topped with tomatoes, basil, and olive oil.</p>
-                <span class="price">$8.99</span>
+                <h3>بامية</h3>
+                <span class="price">60 LE</span>
             </div>
         </div>
         <div class="menu-item">
-            <img src="images/soup.jpg" alt="Soup">
+            <img src="" alt="ملوخية">
             <div>
-                <h3>Tomato Soup</h3>
-                <p>Rich and creamy tomato soup served with croutons.</p>
-                <span class="price">$6.49</span>
+                <h3>ملوخية</h3>
+                <span class="price">50 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="خضار مشكل">
+            <div>
+                <h3>خضار مشكل</h3>
+                <span class="price">50 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="مكرونة فرن">
+            <div>
+                <h3>مكرونة فرن</h3>
+                <span class="price">75 LE</span>
             </div>
         </div>
     </div>
+    
+    <div id="kids_meals" class="items" style="display: none;">
+        <div class="menu-item">
+            <img src="" alt="فراخ بانية">
+            <div>
+                <h3>فراخ بانية</h3>
+                <p>قطعة بانية - بطاطس - مكرونة فرن - مشروب
+                    رمضاني - مياة صغيرة</p>
+                <span class="price">160 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="كفتة مشوية">
+            <div>
+                <h3>كفتة مشوية</h3>
+                <p>3 قطع كفتة - بطاطس - مكرونة فرن - مشروب
+                    رمضاني - مياة صغيرة</p>
+                <span class="price">160 LE</span>
+            </div>
+        </div>  
+    </div>
+
+    <div id="trays" class="items" style="display: none;">
+        <div class="menu-item">
+            <img src="" alt="صنية الحبايب">
+            <div>
+                <h3>صنية الحبايب</h3>
+                <p>فرخه شيش - نص ك طرب مشوي - نص ك
+                    كفتة مشوية - نص ك ممبار - ارز</p>
+                <span class="price">1275 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="صنية المكس">
+            <div>
+                <h3>صنية المكس</h3>
+                <p>ك كفتة مشوية - نص ك طرب مشوي - فرخة
+                    ونص شيش - ارز</p>
+                <span class="price">1250 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="صنية الصحاب">
+            <div>
+                <h3>صنية الصحاب</h3>
+                <p>ك كفتة مشوية - نص ك كباب مشوي - فرخة
+                    شيش - ارز</p>
+                <span class="price">1400 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="صنية العيلة">
+            <div>
+                <h3>صنية العيلة</h3>
+                <p>فرخة شيش - نص ك طرب مشوي - نص ك
+                    ممبار - عدد 2 فرد حمام محشي - كيلو اال ربع
+                    كفتة مشوية - ارز</p>
+                <span class="price">1900 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="صنية التوفير">
+            <div>
+                <h3>صنية التوفير</h3>
+                <p>فرخة شيش - نص ك فرخة مشوية - نص ك
+                    كفتة مشوية - ربع ك طرب مشوي - ارز</p>
+                <span class="price">100LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="صنية العتاولة">
+            <div>
+                <h3>صنية العتاولة</h3>
+                <p>دد 2 فرخة شيش - عدد 4 فرد حمام محشي
+                     نص ك كفتة مشوية - نص ك ممبار - ارز</p>
+                <span class="price">1950 LE</span>
+            </div>
+        </div>  
+    </div>
+
+    <div id="appetizers" class="items" style="display: none;">
+        <div class="menu-item">
+            <img src="" alt="ورق عنب">
+            <div>
+                <h3>ورق عنب</h3>
+                <span class="price">75 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="مبار">
+            <div>
+                <h3>مبار</h3>
+                <span class="price">70 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="سمبوسة جبنة">
+            <div>
+                <h3>سمبوسة جبنة</h3>
+                <span class="price">65 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="سمبوسة لحمة">
+            <div>
+                <h3>سمبوسة لحمة</h3>
+                <span class="price">75 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="بوم فريت">
+            <div>
+                <h3>بوم فريت</h3>
+                <span class="price">50 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="مقبالت مشكل">
+            <div>
+                <h3>مقبالت مشكل</h3>
+                <span class="price">90 LE</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="sides_food" class="items" style="display: none;">
+        <div class="menu-item">
+            <img src="" alt="ارز">
+            <div>
+                <h3>ارز</h3>
+                <span class="price">30 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="سلطة">
+            <div>
+                <h3>سلطة</h3>
+                <span class="price">35 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="شوربة اليوم">
+            <div>
+                <h3>شوربة اليوم</h3>
+                <span class="price">30 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="مشروب رمضاني">
+            <div>
+                <h3>مشروب رمضاني</h3>
+                <span class="price">25 LE</span>
+            </div>
+        </div>  
+    </div>
+
+    <div id="HOT_DRINKS" class="items" style="display: none;">
+        <div class="menu-item">
+            <img src="" alt="HOT_DRINKS">
+            <div>
+                <h3>شاي</h3>
+                <span class="price">25 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="شاي اخضر">
+            <div>
+                <h3>شاي اخضر</h3>
+                <span class="price">30 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="اعشاب">
+            <div>
+                <h3>اعشاب</h3>
+                <P>نعناع - ينسون - كركدية</P>
+                <span class="price">30 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="كوكتيل اعشاب">
+            <div>
+                <h3>كوكتيل اعشاب</h3>
+                <span class="price">40 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="هوت سيدر">
+            <div>
+                <h3>هوت سيدر</h3>
+                <span class="price">45 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="هوت شوكليت">
+            <div>
+                <h3>هوت شوكليت</h3>
+                <span class="price">70 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="سحلب">
+            <div>
+                <h3>سحلب</h3>
+                <span class="price">45 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="سحلب مكسرات">
+            <div>
+                <h3>سحلب مكسرات</h3>
+                <span class="price">65 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="سحلب فواكة">
+            <div>
+                <h3>سحلب فواكة</h3>
+                <span class="price">65 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="نسكافية">
+            <div>
+                <h3>نسكافية</h3>
+                <span class="price">60 LE</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="SOFT DRINKS" class="items" style="display: none;">
+        <div class="menu-item">
+            <img src="" alt="صودا">
+            <div>
+                <h3>صودا</h3>
+                <p>بيبسي - ميرندا - سفن</p>
+                <span class="price">35 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="فيروز">
+            <div>
+                <h3>فيروز</h3>
+                <span class="price">40 LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="بريل">
+            <div>
+                <h3>بريل</h3>
+                <span class="price">40 LE</span>
+            </div>
+            <div class="menu-item">
+                <img src="" alt="شويبس">
+                <div>
+                    <h3>شويبس</h3>
+                    <span class="price">40 LE</span>
+                </div>
+            <div class="menu-item">
+            <img src="" alt="ريد بول">
+            <div>
+                <h3>ريد بول</h3>
+                <p>جوز هند - بلوبيري - خوخ</p>
+                <span class="price">70 LE</span>
+            </div>
+            <div class="menu-item">
+                <img src="" alt="موخيتو">
+                <div>
+                    <h3>موخيتو</h3>
+                    <p>سبرايت - نعناع - لمون</p>
+                    <span class="price"> LE</span>
+                </div>
+                <div class="menu-item">
+            <img src="" alt="موخيتو اناناس">
+            <div>
+                <h3>موخيتو اناناس</h3>
+                <p>سبرايت - فليفر اناناس</p>
+                <span class="price">60 LE</span>
+            </div>
+            <div class="menu-item">
+            <img src="" alt="موخيتو باشون">
+            <div>
+                <h3>موخيتو باشون</h3>
+                <p>سبرايت - فليفر باشون</p>
+                <span class="price">60 LE</span>
+            </div>
+            <div class="menu-item">
+            <img src="" alt="صن شاين">
+            <div>
+                <h3>صن شاين</h3>
+                <span class="price">55 LE</span>
+            </div>
+            <div class="menu-item">
+            <img src="" alt="بلو كرواسو">
+            <div>
+                <h3>بلو كرواسو</h3>
+                <span class="price">75 LE</span>
+            </div>
+            <div class="menu-item">
+            <img src="" alt="مياة صغيرة">
+            <div>
+                <h3>مياة صغيرة</h3>
+                <span class="price">15 LE</span>
+            </div>
+            <div class="menu-item">
+            <img src="" alt="">
+            <div>
+                <h3></h3>
+                <span class="price"> LE</span>
+            </div>
+            <div class="menu-item">
+            <img src="" alt="مياة كبيرة">
+            <div>
+                <h3>مياة كبيرة</h3>
+                <span class="price">20 LE</span>
+            </div>
+            <div class="menu-item">
+            <img src="" alt="مشروب رمضاني">
+            <div>
+                <h3>مشروب رمضاني</h3>
+                <span class="price">35 LE</span>
+            </div>
+    </div>
+
+    <div id="" class="items" style="display: none;">
+        <div class="menu-item">
+            <img src="" alt="">
+            <div>
+                <h3></h3>
+                <span class="price">LE</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="" alt="">
+            <div>
+                <h3></h3>
+                <span class="price">LE</span>
+            </div>
+        </div>  
+    </div>
+
 </main>
+
 <footer>
     <div class="footer-content">
         <div class="social-links">
-            <a href="" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
-            <a href="" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
         </div>
-        <p>© 2025 talinda. All rights reserved.</p>
+        <p>© 2025 Talinda. All rights reserved.</p>
     </div>
 </footer>
-</body>
-</html>
+
+
+</body></html>
