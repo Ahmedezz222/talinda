@@ -11,7 +11,7 @@ main {
     flex: 1;
 }
 nav {
-    background: #a35e38;
+    background: #fff;
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -48,8 +48,8 @@ nav img {
     padding: 12px 20px;
     font-size: 16px;
     border-radius: 25px;
-    border: 1px solid #ddd;
-    background: #fff;
+    border: 1px solid #ffffff;
+    background: #ffca00;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -63,7 +63,7 @@ nav img {
 .category-item:hover, .category-item.active {
     transform: scale(1.1);
     border-color: #97542f;
-    background: rgba(151, 116, 47, 0.2);
+    background: #fff;
 }
 .items {
     display: none;
@@ -72,6 +72,7 @@ nav img {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    BACKGROUND: url(images/url.jpg) no-repeat center center/cover;
 }
 .menu-item {
     background: white;
@@ -98,7 +99,7 @@ nav img {
     font-size: 18px;
 }
 footer {
-    background: #97542f;
+    background: #000000;
     color: white;
     text-align: center;
     padding: 20px 0;
